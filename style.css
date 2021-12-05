@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: gainsboro;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(32, auto);
+  width: 964px;
+  height: 964px;
+  background-color: black;
+  border: 30px groove red;
+  border-radius: 10px;
+  grid-gap: 1px;
+}
+
+.div-grid {
+  background-color: white;
+}
