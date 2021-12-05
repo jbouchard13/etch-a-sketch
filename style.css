@@ -1,5 +1,6 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -9,9 +10,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(32, auto);
-  width: 964px;
-  height: 964px;
+  grid-template-columns: repeat(64, auto);
+  width: 75vh;
+  height: 75vh;
   background-color: black;
   border: 30px groove red;
   border-radius: 10px;
@@ -20,4 +21,12 @@ body {
 
 .div-grid {
   background-color: white;
+}
+
+.hover {
+  background-color: black;
+}
+
+.clearBtnContainer {
+  padding-top: 30px;
 }
