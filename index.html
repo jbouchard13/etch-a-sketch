@@ -8,12 +8,18 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="grid-container"></div>
-    <div class="clearBtnContainer"><button class="clearBtn">Clear</button></div>
-    <div class="modalContainer">
-      <div class="modalHeader">Use the slider to determine grid size</div>
-      <input type="range" min="16" max="128" value="64" id="boxSelect" />
-      <button id="createBtn">Create</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <div class="modal-header">Use the slider to determine grid size</div>
+        <input type="range" min="16" max="100" value="58" id="boxSelect" />
+        <button id="createBtn">Create</button>
+      </div>
+    </div>
+    <div class="body">
+      <div class="grid-container"></div>
+      <div class="clear-btn-container">
+        <button class="clear-btn">Clear</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

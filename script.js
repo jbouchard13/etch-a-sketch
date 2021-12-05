@@ -1,11 +1,22 @@
 const gridContainerEl = document.querySelector(".grid-container");
-const clearBtnEl = document.querySelector(".clearBtn");
+const clearBtnEl = document.querySelector(".clear-btn");
 const squareCountEl = document.querySelector("#boxSelect");
 const createBtnEl = document.querySelector("#createBtn");
+const modalContainerEl = document.querySelector(".modal-container");
 let squareCount = squareCountEl.value * squareCountEl.value;
+
 let divArray = [];
 
+const closeModal = () => {
+  modalContainerEl.classList.add("hide-modal");
+};
+
+const openModal = () => {
+  modalContainerEl.classList.remove("hide-modal");
+};
+
 const createGrid = (squareCount) => {
+  closeModal();
   // set the column template style to the square count
   gridContainerEl.style.gridTemplateColumns = `repeat(${squareCountEl.value}, auto)`;
   // create the amount of divs required to build the grid
@@ -43,6 +54,7 @@ const clearOldGrid = () => {
 };
 
 clearBtnEl.addEventListener("click", () => {
+  openModal();
   // set all backgrounds back to white
   handleClear();
 });
@@ -56,7 +68,7 @@ createBtnEl.addEventListener("click", () => {
 });
 
 // on page load create a grid with a default 64x64 grid
-createGrid(squareCount);
+// createGrid(squareCount);
 
 // when the create button is clicked
 // the div array will be emptied

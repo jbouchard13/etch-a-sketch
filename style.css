@@ -8,24 +8,192 @@ body {
   background-color: gainsboro;
 }
 
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide-modal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: white;
+  padding: 100px;
+  border: ridge 2px black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.grid-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  border-style: 1px groove red;
+  border-radius: 10px;
+  min-width: 1080px;
+  min-height: 1080px;
+}
+
 .grid-container {
   display: grid;
-  width: 75vh;
-  height: 75vh;
+  width: 960px;
+  height: 960px;
   background-color: black;
-  border: 30px groove red;
+  border: 80px groove red;
   border-radius: 10px;
-  grid-gap: 1px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .div-grid {
   background-color: white;
+  cursor: crosshair;
 }
 
 .hover {
   background-color: black;
+  cursor: crosshair;
 }
 
-.clearBtnContainer {
+.clear-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding-top: 30px;
+  background-color: red;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.clear-btn {
+  margin-bottom: 15px;
+  width: 25%;
+  height: 30px;
+}
+
+button {
+  color: white;
+  background-color: darkgray;
+  border-radius: 5px;
+  cursor: pointer;
+  border: rgb(75, 75, 75) 2px;
+  border-style: ridge;
+}
+
+button:hover {
+  background-color: #50555c;
+}
+
+/* code below generated using range.css builder at http://danielstern.ca/range.css/?ref=css-tricks#/ */
+input[type="range"] {
+  width: 100%;
+  margin: 13px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(48, 113, 169, 0.6);
+  border: 1px solid #010101;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -14px;
+  width: 16px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #a6c8e6;
+}
+input[type="range"]::-moz-range-track {
+  background: rgba(48, 113, 169, 0.6);
+  border: 1px solid #010101;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 14px 0;
+  color: transparent;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #09141e;
+  border: 1px solid #010101;
+  border-radius: 10px;
+}
+input[type="range"]::-ms-fill-upper {
+  background: rgba(48, 113, 169, 0.6);
+  border: 1px solid #010101;
+  border-radius: 10px;
+}
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: rgba(48, 113, 169, 0.6);
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #a6c8e6;
+}
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type="range"] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
 }
