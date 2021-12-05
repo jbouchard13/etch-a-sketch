@@ -10,7 +10,6 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(64, auto);
   width: 75vh;
   height: 75vh;
   background-color: black;
