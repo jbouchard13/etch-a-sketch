@@ -6,6 +6,8 @@ body {
   text-align: center;
   min-height: 100vh;
   background-color: gainsboro;
+  opacity: 1;
+  transition: opacity ease-in-out 0.33s;
 }
 
 .modal-container {
@@ -18,6 +20,7 @@ body {
   opacity: 1;
   visibility: visible;
   transform: scaleX(1.1) scaleY(1.1);
+  transition: opacity ease-in-out 0.33s;
 }
 
 .show-modal {
@@ -28,13 +31,15 @@ body {
 .hide-modal {
   opacity: 0;
   visibility: hidden;
+  transition: opacity ease-in-out 0.33s;
 }
 
 .modal-content {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -140%);
+  transition: transform 0.5s;
   text-align: center;
   background-color: white;
   padding: 100px;
@@ -51,15 +56,15 @@ body {
   background-color: black;
   border-style: 1px groove red;
   border-radius: 10px;
-  min-width: 1080px;
-  min-height: 1080px;
+  width: 1080px;
+  height: 1080px;
 }
 
 .grid-container {
   display: grid;
   width: 960px;
   height: 960px;
-  background-color: black;
+  background-color: white;
   border: 80px groove red;
   border-radius: 10px;
   border-bottom-left-radius: 0px;
@@ -69,6 +74,7 @@ body {
 .div-grid {
   background-color: white;
   cursor: crosshair;
+  opacity: 1;
 }
 
 .hover {
@@ -77,14 +83,38 @@ body {
 }
 
 .clear-btn-container {
+  z-index: -1;
+  margin-top: -50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: 150px;
+  padding-right: 150px;
   align-items: center;
   text-align: center;
   padding-top: 30px;
   background-color: red;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.shader-btn,
+.color-btn {
+  margin-bottom: 15px;
+  height: 75px;
+  width: 75px;
+  border-radius: 100%;
+  transition: border-style 1s ease-in;
+}
+
+.held {
+  background-color: #50555c;
+  border: inset 3px black;
+}
+
+.shader-btn:active,
+.color-btn:active,
+.clear-btn:active {
+  border: inset 3px black;
 }
 
 .clear-btn {
@@ -99,7 +129,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   border: rgb(75, 75, 75) 2px;
-  border-style: ridge;
+  border-style: outset;
 }
 
 button:hover {
