@@ -26,6 +26,7 @@ body {
 .show-modal {
   opacity: 1;
   visibility: visible;
+  z-index: 1;
 }
 
 .hide-modal {
@@ -38,8 +39,7 @@ body {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translate(-50%, -140%);
-  transition: transform 0.5s;
+  transform: translate(-50%, -135%);
   text-align: center;
   background-color: white;
   padding: 100px;
@@ -74,7 +74,11 @@ body {
 .div-grid {
   background-color: white;
   cursor: crosshair;
-  opacity: 1;
+}
+
+.shader {
+  opacity: 0.1;
+  background-color: red;
 }
 
 .hover {

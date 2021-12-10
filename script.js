@@ -9,8 +9,9 @@ let squareCount = squareCountEl.value * squareCountEl.value;
 
 let colorArray = ["red", "orange", "yellow", "green", "cyan", "blue", "violet"];
 
+let op = 0.0;
+
 let divArray = [];
-let opacity = 0.1;
 let rainbowActive = false;
 let shaderActive = false;
 
@@ -41,11 +42,23 @@ const createGrid = (squareCount) => {
         e.target.style.background =
           colorArray[Math.floor(Math.random() * colorArray.length)];
       }
-      if (shaderActive === true) {
-        let opacity = e.target.style.opacity;
-        e.target.style.opacity = e.target.style.opacity;
-        console.log(e.target.style.opacity);
-      }
+      // non working shader code
+      // if (shaderActive === true) {
+      //   e.target.classList.add("shader");
+      //   e.target.style.opacity = 0.1;
+      //   if (e.target.style.opacity === e.target.style.opacity) {
+      //     let originalOpacity = window
+      //       .getComputedStyle(e.target)
+      //       .getPropertyValue("opacity");
+      //     let parsedOriginal = parseFloat(originalOpacity);
+      //     parsedOriginal = parsedOriginal + 0.1;
+      //     e.target.style.opacity = parsedOriginal + 0.1;
+      //     console.log(parsedOriginal + 0.1);
+      //   }
+      // }
+      // if (shaderActive === false) {
+      //   e.target.classList.remove("shader");
+      // }
     });
     // push each div to an array to be used when clearing
     divArray.push(div);
@@ -59,6 +72,11 @@ const handleClear = () => {
   divArray.forEach((div) => {
     div.classList.remove("hover");
     div.style.background = "white";
+    div.style.opacity = 0;
+    rainbowActive = false;
+    rainbowBtnEl.classList.remove("held");
+    shaderActive = false;
+    shaderBtnEl.classList.remove("held");
   });
 };
 
